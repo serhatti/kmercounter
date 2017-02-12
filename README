@@ -1,0 +1,46 @@
+# This program lists the most abundant k-mers in a given fastq file. A counting bloom filter is utilized in order to bypass
+  uninteresting k-mers with low abundances. Counter bits are set to 5 by default.
+# The program has been  tested on fastq files under ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/HG01595/sequence_read/
+   (On a system with i7-5500U CPU @ 2.40GHz / 8GB RAM )
+   It took about 90 mins to count 30-mers in  a large fastq file with 72 millions of sequences of length 100 where  a memory peak
+    slightly less than 6GB was observed.
+# For medium  and small sized files (~ 1.8 GB) a flat memory usage of 2.4 GB was observed most of which is allocated for the bloom filter itself.
+  Runtime was around 10-20 mins 
+  
+
+
+
+# ********************* Dependencies and building ***************************
+
+
+# Make sure your system has zlib library and its dev packages, a g++ compiler and cmake installed...
+# git command is required to fetch dependencies automatically during pre-build stage. (used by get_externals.sh) 
+# To read the fastq files kseq.h has been used.
+  From : (http://lh3lh3.users.sourceforge.net/download/kseq.tar.bz2)
+
+# This program uses two external libraries libbf  and google sparsehash. 
+
+  sparsehash from : ( https://github.com/sparsehash/sparsehash external/sparsehash )
+  libbf from : ( https://github.com/mavam/libbf )
+
+# libbf provides  a bloom filter with optional counting bits
+# google sparse_hash_map has a very low memory overhead when compared to stl map implementations which I have used before...
+
+
+
+# Before compiling the main program, we download and install these libraries in the current folder. This is automatized 
+  by the get_externals.sh script.
+
+# After the externals libraries are deployed, then you should build the program by simply issuing "make"
+
+
+#**************** Running ************************************
+# To run the program please do not use main.exe. Use "kmercounter" wrapper script instead. The wrapper script appends
+  the necessary library paths and prints the toplist kmers specified by the user
+# By default results are written in an output file with an extension .OUT and topcount is printed on the screen
+
+# if you want to print some another topcount later. You dont have to re-run the program again. Just run printfile.sh script on the .OUT file..
+
+
+Serhat Istin
+istins@gmail.com
