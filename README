@@ -8,6 +8,9 @@
   Runtime was around 10-20 mins 
   
 
+Implementation is based on the ideas in the reference paper here :
+  Efficient counting of k-mers in DNA sequences using a bloom filter 
+  http://www.biomedcentral.com/1471-2105/12/333
 
 
 # ********************* Dependencies and building ***************************
