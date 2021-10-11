@@ -1,5 +1,5 @@
 # kmercounter
-A small package utilizing a counting Bloom filter to count most abundant k-mers.  The packge explicitly depends on google sparse hash map, libbf and seqtk(kseq.h).
+A small package utilizing a counting Bloom filter to count most abundant k-mers.  The packge  depends on google sparse hash map, libbf and seqtk(kseq.h).
   
 
 Implementation is based on the ideas in the reference paper here :
