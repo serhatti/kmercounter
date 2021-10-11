@@ -11,8 +11,6 @@
 #define KmerCounter_H
 
 #include <vector>
-#include <map>
-#include <iostream>
 #include <bf/bloom_filter/counting.hpp>
 #include <sparsehash/sparse_hash_map>
 

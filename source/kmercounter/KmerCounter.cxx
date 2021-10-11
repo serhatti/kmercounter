@@ -1,3 +1,4 @@
+#include <iostream>
 #include "KmerCounter.h"
 
 KmerCounter::KmerCounter(unsigned short int kmersize){
@@ -15,8 +16,7 @@ KmerCounter::KmerCounter(unsigned short int kmersize){
 
 KmerCounter::~KmerCounter(){
 	if (cbf) delete cbf;
-	//delete kmerlist;
-	//delete encoded_kmer;
+	
 }
 
 void KmerCounter::Encode(const std::string& kmer ){
@@ -42,7 +42,7 @@ void KmerCounter::Encode(const std::string& kmer ){
 	        encoded_kmer.push_back(1);
 	        break;
 	      default :
-	        std::cerr<<"Unknown character in DNA word"<<std::endl;
+	        std::cerr<<"Unknown character in sequence!"<<std::endl;
 	        exit(8);
 		}
 	}
@@ -96,7 +96,7 @@ void KmerCounter::Process(const std::string& curr_seq){
 		if (cbf->lookup(curr_kmer)<CUTOFF){
 			cbf->add(curr_kmer);
 			continue;
-			}
+		}
 		Encode(curr_kmer);
 		bool exists=kmerlist.find(encoded_kmer)!=kmerlist.end();
 		if(exists){
@@ -104,11 +104,9 @@ void KmerCounter::Process(const std::string& curr_seq){
 		  //curr_bits.clear();
 		  continue;
 		}
-		//std::cout<<curr_kmer<<std::endl;
         //if the encountered k-mer is already in the hash table then initialize its  counter by cutoff+1
         else {
 		  (kmerlist)[encoded_kmer]=CUTOFF+1;
-		   //std::cout<<"Lililililil"<<std::endl;
         }
      }
 	return;
