@@ -1,3 +1,7 @@
+/*
+author	:Serhat Istin
+	 istins@gmail.com
+*/
 #include <iostream>
 #include "KmerCounter.h"
 

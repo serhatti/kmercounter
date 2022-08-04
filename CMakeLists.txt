@@ -1,3 +1,5 @@
+#author : Serhat Istin
+#	  istins@gmail.com
 project(kmercounter)
 include(ExternalProject)
 cmake_minimum_required(VERSION 2.8.8)

@@ -1,4 +1,6 @@
 # kmercounter
+#author : Serhat Istin
+#	  istins@gmail.com
 A small package utilizing a counting Bloom filter to count most abundant k-mers.  The packge  depends on google sparse hash map, libbf and seqtk(kseq.h).
   
 

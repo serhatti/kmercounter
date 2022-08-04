@@ -1,3 +1,5 @@
+#author : Serhat Istin	
+#	  istins@gmail.com
 include_directories(${INSTALL_DIR}/include)
 link_directories(${INSTALL_DIR}/lib )
 
