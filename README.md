@@ -9,16 +9,15 @@ Implementation is based on the ideas in the reference paper here :
   http://www.biomedcentral.com/1471-2105/12/333
 
 
-# *********************  Dependencies and building ***************************
+Dependencies and building :
 You must have git and zlib installed in your system.
 To build the package use cmake.
 Append to path by :
 > source install/setup.sh
 
-# ********************** Running **********************************************
+Running:
 For help and to see cl options,  run :
 >count_kmers
 
-**********************************************************************************
 Serhat Istin
 istins@gmail.com
